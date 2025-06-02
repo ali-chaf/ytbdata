@@ -1,0 +1,97 @@
+/* Add custom styles for the dashboard */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.dashboard-header {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tag-pill:hover {
+  transform: scale(1.05);
+}
+
+.tech-tag { background-color: rgba(79, 70, 229, 0.1); color: #4f46e5; }
+.mining-tag { background-color: rgba(245, 158, 11, 0.1); color: #d97706; }
+.factory-tag { background-color: rgba(16, 185, 129, 0.1); color: #059669; }
+.megabuild-tag { background-color: rgba(244, 63, 94, 0.1); color: #e11d48; }
+.power-tag { background-color: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+
+.niche-card {
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.niche-card.tech { border-left-color: #4f46e5; }
+.niche-card.mining { border-left-color: #d97706; }
+.niche-card.factory { border-left-color: #059669; }
+.niche-card.megabuild { border-left-color: #e11d48; }
+.niche-card.power { border-left-color: #3b82f6; }
+
+.chart-container {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  transform: scale(1.01);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 1.5rem;
+  }
+  
+  .chart-container {
+    height: 300px !important;
+  }
+}
